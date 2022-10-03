@@ -128,22 +128,22 @@ https://www.contributor-covenant.org/faq. Translations are available at
 https://www.contributor-covenant.org/translations.
 
 ## Commitment
-# How are you going to organise yourselves?
+### How are you going to organise yourselves?
 Update MS Planner regularly, weekly scrum, monthly planning and review
 
-# When and how will you be meeting regularly?
+### When and how will you be meeting regularly?
 Regular meetings weekly (30 mins) and monthly (1 hour) using Teams.
 
-# What is your policy on 'absent' team members?
+### What is your policy on 'absent' team members?
 Give a notice at least a week in advance.
 
-# How are you going to structure your GitHub repository?
+### How are you going to structure your GitHub repository?
 'main' branch as production stream, use 'dev' branch as the main working directory from which you can brach individual working directories.
 
-# What form will your documentation take, and where will you store it?
+### What form will your documentation take, and where will you store it?
 Use MKDocs and build html documentation from markdown and source files.
 
-# How are we going to manage conflicting ideas?
+### How are we going to manage conflicting ideas?
 Present pros and cons for both and have open minded opinions about each.
 
 
