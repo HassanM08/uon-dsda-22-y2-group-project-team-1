@@ -1,0 +1,13 @@
+name: service
+channels:
+- defaults
+dependencies:
+- python
+- numpy
+- pandas
+- pip
+
+# dev
+- black
+- flake8
+- jupyter
