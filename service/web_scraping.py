@@ -5,7 +5,7 @@ from typing import Dict
 import pandas as pd
 from bs4 import BeautifulSoup as bs
 
-from service import BRANCHES_URL, ESTATE_AGENTS_URL
+from service import BRANCHES_URL, ESTATE_AGENTS_URL, PROPERTY_TYPES
 
 
 def get_your_move_branches() -> str:
@@ -100,26 +100,14 @@ def get_property_type(data: pd.DataFrame) -> pd.DataFrame:
     description.
 
     """
-    property_types = [
-        "semi detached",
-        "link detached",
-        "detached",
-        "end terrace",
-        "mid terrace",
-        "flat",
-        "bungalow",
-        "land/plot",
-        "house",
-        "property"
-    ]
     _data = data.copy()
     _data["property type"] = "0"
 
     for index in _data.index:
         description = _data["description"][index].lower().replace("-", " ")
-        for type in property_types:
-            if type in description:
-                _data["property type"] = type
+        for property_type in PROPERTY_TYPES:
+            if property_type in description:
+                _data["property type"] = property_type
             
     return _data
 
