@@ -1,11 +1,11 @@
-name: service
+name: house-ml
 channels:
 - defaults
 dependencies:
 - python
-- numpy
-- pandas
 - pip
+- beautifulsoup4
+- pandas
 
 # dev
 - black
