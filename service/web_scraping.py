@@ -5,7 +5,7 @@ from typing import Dict
 import pandas as pd
 from bs4 import BeautifulSoup as bs
 
-from backend import BRANCHES_URL, ESTATE_AGENTS_URL
+from service import BRANCHES_URL, ESTATE_AGENTS_URL
 
 
 def get_your_move_branches() -> str:
