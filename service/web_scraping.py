@@ -16,7 +16,6 @@ def get_your_move_branches() -> str:
     results = soup.findAll('h2', class_="branch-thumbnail__title")
     return [branch.text for branch in results]
 
-
 def get_your_move_houses_for_sale_at_branch(
     branch: str, max_pages: int = 11
 ) -> Dict[str, str]:
@@ -32,6 +31,7 @@ def get_your_move_houses_for_sale_at_branch(
     }
 
     _branch = branch.lower().replace(" ", "-")
+    print(_branch)
     
     for page in range(1, max_pages):
         URL = (
@@ -78,6 +78,51 @@ def get_your_move_houses_for_sale_at_branch(
 
     return pd.DataFrame(for_sale_dictionary)
 
+def get_property_postcode(data: pd.DataFrame) -> pd.DataFrame:
+    """Returns the right move property data with the post code extracted from the
+    description.
+
+    """
+    _data = data.copy()
+    _data["post code"] = "0"
+    check_post_code = re.compile("^([A-Z]{1}|[A-Z]{2})([0-9]{1}|[0-9]{2})$")
+
+    for index in _data.index:
+        post_code = _data["description"][index].split(", ")[-1]
+        match = check_post_code.match(post_code)
+        if match: 
+            _data.at[index, "post code"] = post_code
+            
+    return _data
+
+def get_property_type(data: pd.DataFrame) -> pd.DataFrame:
+    """Returns the right move property data with the property type extracted from the
+    description.
+
+    """
+    property_types = [
+        "semi detached",
+        "link detached",
+        "detached",
+        "end terrace",
+        "mid terrace",
+        "flat",
+        "bungalow",
+        "land/plot",
+        "house",
+        "property"
+    ]
+    _data = data.copy()
+    _data["property type"] = "0"
+
+    for index in _data.index:
+        description = _data["description"][index].lower().replace("-", " ")
+        for type in property_types:
+            if type in description:
+                _data["property type"] = type
+            
+    return _data
+
 def get_your_move_all_houses_for_sale() -> pd.DataFrame:
     """Returns the houses for sale on your move across all branches.
     """
@@ -85,12 +130,16 @@ def get_your_move_all_houses_for_sale() -> pd.DataFrame:
     all_houses_for_sale = False
 
     for branch in branches:
-        if not all_houses_for_sale:
+        if all_houses_for_sale is False:
             all_houses_for_sale = get_your_move_houses_for_sale_at_branch(branch)
         else:
             houses_for_sale_at_branch = get_your_move_houses_for_sale_at_branch(branch)
             all_houses_for_sale = pd.concat(
-                [houses_for_sale_at_branch, all_houses_for_sale], axis=1
+                [houses_for_sale_at_branch, all_houses_for_sale], axis=0
             )
+
+    all_houses_for_sale.reset_index(inplace=True, drop=True)
+    all_houses_for_sale = get_property_postcode(all_houses_for_sale)
+    all_houses_for_sale = get_property_type(all_houses_for_sale)
 
     return all_houses_for_sale
