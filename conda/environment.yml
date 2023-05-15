@@ -3,10 +3,12 @@ channels:
 - defaults
 dependencies:
 - python
-- pandas
 - pip
+- beautifulsoup4
+- pandas
 
 # dev
 - black
 - flake8
+- isort
 - jupyter
