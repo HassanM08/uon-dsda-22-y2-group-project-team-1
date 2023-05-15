@@ -6,3 +6,4 @@ def get_postcode_mapping_table():
     postcode = pd.read_csv('postcode_map.csv')
 
     return postcode
+
