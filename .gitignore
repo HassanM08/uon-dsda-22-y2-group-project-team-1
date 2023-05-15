@@ -6,3 +6,5 @@ backend/config.ini
 
 #Ignore all csv files
 *.csv
+
+**/__pycache__
