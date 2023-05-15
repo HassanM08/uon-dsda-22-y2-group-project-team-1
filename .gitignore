@@ -1,5 +1,5 @@
 **/.ipynb_checkpoints
-service/config.ini
+backend/config.ini
 
 #Ignore all xlsx files
 *.xlsx
