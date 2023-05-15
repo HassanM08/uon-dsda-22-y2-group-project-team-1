@@ -2,7 +2,7 @@ import psycopg2
 import pandas as pd
 from config import config
 
-def query(query: str, table_name: str, to_df: bool = False):
+def query(query: str, table_name: str, output: str = 'default'):
     """ Connect to the PostgreSQL database server """
     conn = None
     try:
@@ -23,10 +23,15 @@ def query(query: str, table_name: str, to_df: bool = False):
 
         # get query output
         output = cur.fetchall()
+
+        if output == 'df':
         
-        # get column names (for if we want to make a dataframe from the output)
-        cur.execute(f"Select * FROM {table_name} LIMIT 0")
-        colnames = [desc[0] for desc in cur.description]      
+            # get column names (for if we want to make a dataframe from the output)
+            cur.execute(f"Select * FROM {table_name} LIMIT 0")
+            colnames = [desc[0] for desc in cur.description]
+
+        else:
+            pass      
                     
 	# close the communication with the PostgreSQL
         cur.close()
@@ -34,14 +39,18 @@ def query(query: str, table_name: str, to_df: bool = False):
         print(error)
     finally:
         if conn is not None:
+            conn.commit() # This is required for queries that alter the database.
             conn.close()
             print('Database connection closed.')
 
-    if to_df is True:
+    if output == 'df':
 
         output_df = pd.DataFrame(data = output, columns = colnames)
         return output_df
     
-    else:
+    elif output == 'default':
         return output
+    
+    else:
+        pass
 

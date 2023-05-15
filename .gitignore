@@ -1,2 +1,8 @@
 **/.ipynb_checkpoints
-/config.ini
+service/config.ini
+
+#Ignore all xlsx files
+*.xlsx
+
+#Ignore all csv files
+*.csv
