@@ -1,2 +1,10 @@
 **/.ipynb_checkpoints
 **/__pycache__
+
+backend/config.ini
+
+#Ignore all xlsx files
+*.xlsx
+
+#Ignore all csv files
+*.csv
