@@ -10,4 +10,5 @@ dependencies:
 # dev
 - black
 - flake8
+- isort
 - jupyter
