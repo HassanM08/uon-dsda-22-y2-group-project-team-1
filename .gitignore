@@ -1,7 +1,7 @@
 **/.ipynb_checkpoints
 **/__pycache__
 
-backend/config.ini
+backend/remote_config.ini
 
 #Ignore all xlsx files
 *.xlsx
