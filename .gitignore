@@ -1,7 +1,8 @@
 **/.ipynb_checkpoints
 **/__pycache__
 
-backend/config.ini
+#Ignore all ini files
+*.ini
 
 #Ignore all xlsx files
 *.xlsx
