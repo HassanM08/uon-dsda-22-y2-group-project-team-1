@@ -29,7 +29,7 @@ with sshtunnel.open_tunnel(
 
 """
 
-def get_config(filename: str ='remote_config.ini', section: str ='db') -> dict:
+def get_config(filename: str ='config.ini', section: str ='db') -> dict:
     """ This function reads the specified config file, and allows the user to select a section to be use as parameters for further operations. It is used as part of other functions, such as query_db.
 
     Args:
