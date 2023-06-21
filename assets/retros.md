@@ -1,3 +1,7 @@
+## Actions
++ create cleaning function -> dhruv
++ integrate sold houses -> brad
+
 # 21/06/23 Retro
 ## Humble pie (could have done better)
 + not been too engaged this sprint, data input lacking to machine learning -brad
@@ -16,9 +20,6 @@
 
 ## Pie in the Sky (fanciful idea, be good if we had it)
 + nothing
-
-## Actions
-+ create cleaning function
 
 
 
