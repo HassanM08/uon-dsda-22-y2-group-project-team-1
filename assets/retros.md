@@ -1,4 +1,4 @@
-## Actions
+# Actions
 + create cleaning function -> dhruv
 + integrate sold houses -> brad
 
