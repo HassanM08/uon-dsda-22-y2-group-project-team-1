@@ -6,11 +6,14 @@ dependencies:
 - pip
 - beautifulsoup4
 - pandas
+- psycopg2
+- sshtunnel
 - streamlit
 - sqlalchemy
 
 pip:
   - psycopg2-binary
+
 
 # dev
 - black
