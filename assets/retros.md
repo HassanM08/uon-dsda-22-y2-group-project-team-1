@@ -1,6 +1,9 @@
 # Actions
-+ create cleaning function -> dhruv
-+ integrate sold houses -> brad
++ create cleaning function -dhruv
++ integrate sold houses -brad
++ add to backlog: -team
+  + SPIKE - lat and long coordinate transformation
+  + SPIKE - Map visual of where properties are listed
 
 # 21/06/23 Retro
 ## Humble pie (could have done better)
@@ -19,8 +22,7 @@
 + pickling data -dhruv
 
 ## Pie in the Sky (fanciful idea, be good if we had it)
-+ nothing
-
++ lat and long coordinates of houses to get distance from central london as a model feature -dhruv
 
 
 
