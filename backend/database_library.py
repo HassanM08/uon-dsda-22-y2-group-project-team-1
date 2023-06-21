@@ -173,7 +173,7 @@ def table_from_df(input_df: pd.DataFrame, table_name: str):
         conn.commit()
         
         # load input DataFrame to database table        
-        params = get_config('remote_config.ini','sqlalchemy')
+        params = get_config('config.ini','sqlalchemy')
         url = URL.create(**params)
         engine = create_engine(url)
         input_df.to_sql(table_name, engine, index = False)  # We should look at the 'if_exists' parameter of this method.

@@ -7,6 +7,10 @@ dependencies:
 - beautifulsoup4
 - pandas
 - streamlit
+- sqlalchemy
+
+pip:
+  - psycopg2-binary
 
 # dev
 - black
