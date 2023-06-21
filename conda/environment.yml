@@ -9,6 +9,10 @@ dependencies:
 - psycopg2
 - sshtunnel
 - streamlit
+- sqlalchemy
+
+pip:
+  - psycopg2-binary
 
 
 # dev
