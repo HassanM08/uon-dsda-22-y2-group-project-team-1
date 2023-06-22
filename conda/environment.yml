@@ -6,6 +6,7 @@ dependencies:
 - pip
 - beautifulsoup4
 - pandas
+- pgeocode
 
 # dev
 - black
