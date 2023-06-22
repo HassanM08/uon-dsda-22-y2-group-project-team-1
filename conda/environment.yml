@@ -10,7 +10,7 @@ dependencies:
 - sshtunnel
 - streamlit
 - sqlalchemy
-
+- geopy
 pip:
   - psycopg2-binary
 
