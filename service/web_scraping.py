@@ -193,7 +193,7 @@ def get_rightmove_sold_properties_by_location(branch: str) -> pd.DataFrame:
     
     results = soup.findAll('script', string=re.compile("window.__PRELOADED_STATE__"))
     sold_data = False
-
+    print(branch)
     for result in results:
         _results = result.text.split(r'{"address":')
         some_results = _results[1:-1] + [_results[-1].split("detailUrl")[0]]
@@ -249,7 +249,7 @@ def get_rightmove_sold_properties_by_location(branch: str) -> pd.DataFrame:
 
     return sold_data
 
-def get_rightmove_all_houses_for_sale() -> pd.DataFrame:
+def get_rightmove_all_sold_houses() -> pd.DataFrame:
     """Returns the houses sold on rightmove across all your move branch locations.
     """
     branches = get_your_move_branches()
