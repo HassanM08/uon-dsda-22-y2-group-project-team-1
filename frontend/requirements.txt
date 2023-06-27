@@ -10,7 +10,6 @@ black==19.10b0
 blinker==1.6.2
 brotlipy==0.7.0
 cloudpickle==2.2.1
-clyent==1.2.2
 comtypes==1.1.10
 constantly==15.1.0
 crcmod==1.7
