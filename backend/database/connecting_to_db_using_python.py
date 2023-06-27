@@ -39,11 +39,11 @@ with SSHTunnelForwarder(
     with conn.cursor() as cur:
         # execute a command to get a single row of data
         print("Successfully Connected!")
-        cur.execute("""SELECT *
-FROM pg_catalog.pg_tables
-WHERE schemaname != 'pg_catalog' AND 
-    schemaname != 'information_schema';""")
-        print(cur.fetchone())
+        cur.execute("""SELECT * from sold_houses LIMIT 5""")
+        tables = cur.fetchall()
+        print(tables)
+        #for table in tables:
+        #    print(table[:][:5])
         cur.close()
 
 
