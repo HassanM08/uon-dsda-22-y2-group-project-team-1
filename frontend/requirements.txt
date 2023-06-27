@@ -84,7 +84,6 @@ PyQtChart==5.12
 PyQtWebEngine==5.12.1
 pyreadline==2.1
 pyscopg2==66.0.2
-pyspark==3.3.0
 pytest==7.1.1
 python-lsp-jsonrpc==1.0.0
 python-lsp-server==1.2.4
