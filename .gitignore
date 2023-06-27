@@ -1,2 +1,11 @@
 **/.ipynb_checkpoints
 **/__pycache__
+
+#Ignore all ini files
+*.ini
+
+#Ignore all xlsx files
+*.xlsx
+
+#Ignore all csv files
+*.csv
