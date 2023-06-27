@@ -9,3 +9,6 @@
 
 #Ignore all csv files
 *.csv
+
+#Ignore all toml file
+*.toml
